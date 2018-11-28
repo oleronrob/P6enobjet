@@ -1,0 +1,194 @@
+/*
+gestion de la taille des écrans
+
+case vide
+case joueur 1
+case joueur 2
+case mur
+
+arme 1
+arme 2
+arme 3
+arme 4
+arme 5
+
+combat
+
+bandeau de titre
+score joueur 1
+score joueur 2
+changement de tour
+
+partie perdue
+
+animation de déplacement
+animation de joueur actif
+
+*/
+body {
+    background-color: black;
+}
+
+#game {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    margin: 10px 0px;
+    background: black;
+}
+
+#title {
+    display: inline-block;
+    background: black;
+    text-align: center;
+    text-shadow: 2px 2px red;
+    width: 100%;
+    height: 10%;
+    color: white;
+}
+
+.infoplayer {
+    /*display: flex;*/
+    flex-grow: 1;
+    background: black;
+    text-align: center;
+    width: 2fr;
+    min-width: 150px;
+    height: auto;
+    color: white;
+    border: 2px red solid;
+    border-radius: 5px 5px;
+    margin: 10px 10px;
+    min-width: 150px;
+}
+
+#infoplayer1 {
+    order: 1;
+}
+
+#infoplayer2 {
+    order: 3;
+}
+
+#board {
+    display: flex;
+    /*display:block;*/
+    flex-direction: column;
+    flex-grow: 8;
+    order: 2;
+    width: auto;
+    min-width: 400px;
+    border: 1px solid white;
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    min-height: 400px;
+    height: auto;
+}
+
+#instruction {
+    color: white;
+}
+
+.row {
+    background: white;
+    /*min-height: 40px;*/
+    display: flex;
+}
+
+.cell {
+    display: flex;
+    flex-grow: 1;
+    /*width: auto;*/
+    height: inherit;
+    min-width: 40px;
+    min-height: 40px;
+    background: radial-gradient(white 5%, blue 200%, white 60%);
+    border: 1px solid black;
+    border-radius: 14%;
+    position: relative;
+}
+
+.weapon{
+
+}
+.wall {
+    background: black;
+    z-index: 1000;
+}
+
+.cell img {
+    display: flex;
+    width: inherit;
+    height: inherit;
+
+    z-index: 200;
+}
+/*width: 38px;
+    height: 38px;*/
+.player {
+    width: inherit;
+    height: inherit;
+    /*position: absolute;*/
+    border: 1px solid black;
+    border-radius: 14%;
+    z-index: 400;
+}
+
+.player1 :active {
+    border: 1px solid blue;
+    transform: scale(1.5, 1.5);
+}
+
+.player2, .player1 {
+    width: inherit;
+    height: inherit;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 14%;
+}
+
+.movable {
+    background: radial-gradient(white 5%, red 200%, white 60%);
+    z-index: 300;
+}
+
+.movable:hover {
+    background: radial-gradient(white 5%, purple 100%, white 60%);
+    z-index: 0;
+}
+
+#board {
+    background-color: aqua;
+    /*width: 400px;*/
+    height: auto;
+}
+
+@media screen and (max-width: 766px) {
+    #cotedroit {
+        order: 1;
+    }
+
+    #cotegauche {
+        order: 2;
+    }
+
+    #tableau {
+        order: 3;
+    }
+}
+
+@media screen and (max-width: 1116px) {
+    #cotedroit {
+        order: 1;
+    }
+
+    #cotegauche {
+        order: 2;
+    }
+
+    #tableau {
+        order: 3;
+    }
+}
