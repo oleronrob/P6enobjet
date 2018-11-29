@@ -17,11 +17,7 @@
         </div>
     </header>
     <main>
-        <div id="game" class="container">
-            <div id="infoplayer1" class="infoplayer"></div>
-            <div id="board"></div>
-            <div id="infoplayer2" class="infoplayer"></div>
-        </div>
+
     </main>
     <footer>
         <div id="instruction">
@@ -29,26 +25,17 @@
         </div>
     </footer>
     <script>
-        $(document).ready(function() {
-            myGame.init()
-            InfoPlayer1.init()
-            InfoPlayer2.init()
-            Board.drawCells()
-            Board.drawWalls()
-            Board.drawWeapons()
-            Board.drawPlayers()
-            Player1.movablePlayer()
 
-        })
 
     </script>
 </body>
+<script src="./classes/page.js"></script>
+
 <script src="./classes/weapon.js"></script>
 <script src="./classes/cell.js"></script>
-<script src="./classes/board.js"></script>
+<script src="./classes/board.js"></script><script src="./js/display.js"></script>
 <script src="./classes/player.js"></script>
-<script src="./classes/page.js"></script>
-<script src="./js/utils.js"></script>
+<script src="./js/controler.js"></script>
+<script src="./js/game.js"></script>
 
-<script src="./classes/infoplayers.js"></script>
 </html>

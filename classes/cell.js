@@ -1,8 +1,8 @@
 class cellOfBoard{
-    constructor (id,row,col){
-        this.id = id
-        this.row = row
-        this.col = col
+    constructor (cellNumber,cellRow,cellCol){
+        this.id = cellNumber
+        this.row = cellRow
+        this.col = cellCol
         this.isWall = false
         this.isWeapon = false
         this.isPlayer = false

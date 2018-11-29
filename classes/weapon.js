@@ -5,10 +5,10 @@ class Weapon {
         this.picture = picture
     }
 
-    draw(id) {
-        $(id).append("<img></img>").addClass("anavailable " + this.name)// mettre id weapon
-        $(id).children().attr("src", this.picture)
-        $(id).children().addClass("weapon "+ this.name)
+    draw(jid) {
+        $(jid).append('<img id='+ this.name +'></img>').addClass('weapon')// mettre id weapon
+        $('#'+this.name).attr("src", this.picture).addClass("weapon "+ this.name)
+        this.position = $('#'+this.name)
     }
 
     weaponPrise(selectCase, lastWeapon, nextWeapon) {
