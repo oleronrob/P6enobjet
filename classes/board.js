@@ -37,6 +37,7 @@ class myBoard {
             }
         }
     }
+
     drawWeapons() {
         for (let i = 1; i <= nbWeapons; i++) {
             let id = randomCell()
@@ -49,6 +50,7 @@ class myBoard {
             }
         }
     }
+
     drawPlayers() {
         for (let i = 0; i <= tabplayers.length - 1; i++) {
             let id = cellFreeForPlayer()

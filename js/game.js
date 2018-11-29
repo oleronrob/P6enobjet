@@ -26,18 +26,24 @@ let tabweapon = [
     new Weapon("weapon3", 25, "./pictures/weapon3.png"),
     new Weapon("weapon4", 30, "./pictures/weapon4.png")
 ]
-let tabplayers = [new Player("", "player1", "", "", "./pictures/player1.png", tabweapon[0], "move"), new Player("", "player2", "", "", "./pictures/player2.png", tabweapon[0], "move")]
+let tabplayers = [
+    new Player("Player 1", "player1", "", "", "./pictures/player1.png", tabweapon[0], "move"),
+    new Player("Player 2", "player2", "", "", "./pictures/player2.png", tabweapon[0], "move")]
+
+let tabInfoplayers = [
+    new InfoPlayer(tabplayers[0]),
+    new InfoPlayer(tabplayers[1])]
 
 $(document).ready(function () {
 
-    myGame.gamePage.displayGame()
-    //InfoPlayer1.init()
-    //InfoPlayer2.init()
-    Board.drawCells()
-    Board.drawWalls()
-    Board.drawWeapons()
-    Board.drawPlayers()
-    //Player1.movablePlayer()
-    resizeCellsOnBoard()
+            myGame.gamePage.displayGame()
+            tabInfoplayers[0].init()
+            tabInfoplayers[1].init()
+            Board.drawCells()
+            Board.drawWalls()
+            Board.drawWeapons()
+            Board.drawPlayers()
+            //Player1.movablePlayer()
+            resizeCellsOnBoard()
 
-})
+        })
