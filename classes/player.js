@@ -12,13 +12,14 @@ class Player {
 
     }
     draw(cellid) {
-        $(cellid).addClass(this.title)
-        $(cellid).append('<img id=' + this.title + '></img>')
-        $('#' + this.title).attr("src", this.picture).addClass(this.title)
+        //$(cellid).addClass(this.title)
+        $(cellid).append('<img id=' + this.title + ' src="'+this.picture+'" class="'+this.title+'"></img>')
+        //$('#' + this.title).attr("src", )
+        //$('#' + this.title).addClass()
         this.position = $('#' + this.title)
 
     }
-    movablePlayer() {
+    movablePlayer(pos) {
         let freeCell = [];
         for (let i = 0; i <= moveChoice.length - 1; i++) {
             for (let j = 1; j <= maxMove; j++) {

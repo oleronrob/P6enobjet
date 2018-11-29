@@ -43,7 +43,7 @@ $(document).ready(function () {
             Board.drawWalls()
             Board.drawWeapons()
             Board.drawPlayers()
-            //Player1.movablePlayer()
+            cellToClick(tabplayers[0])
             resizeCellsOnBoard()
 
         })
