@@ -33,8 +33,8 @@ function cellToClick(posinit) {
     let cellPossible = []
     for (let i = 0; i <= moveChoice.length - 1; i++) {
         for (let j = 1; j <= maxMove; j++) {
-            let x = posinit.row + moveChoice[i][1] * j
-            let y = posinit.col + moveChoice[i][0] * j
+            let x = posinit.row + moveChoice[i][0] * j
+            let y = posinit.col + moveChoice[i][1] * j
             if (x < 0 || x > nbCols - 1 || y < 0 || y > nbRows - 1) {
                 break
             }
@@ -42,32 +42,40 @@ function cellToClick(posinit) {
                 break
             } else {
                 cellPossible.push([Board.tab[x][y], moveChoice[i], j])
+                //console.log('tabbord', Board.tab[x][y])
                 $('#' + (x * nbCols + y).toString()).addClass('movable')
             }
         }
     }
-    return clickOnCell()
+    return clickOnCell(posinit, cellPossible)
 }
 
-function clickOnCell() {
+function clickOnCell(posinit, cellpossible) {
     $(".movable").on("click", function (event) {
         $(".movable").off("click") // un seul clic
         $(".movable").toggleClass("movable")
-        let casecliquee = ($(this).parent()).index() * nbCols + $(this).index(); // coordonnées du la case cliquée
+        let clickedCell = ($(this).parent()).index() * nbCols + $(this).index(); // coordonnées du la case cliquée
         let x = $(this).parent().index()
         let y = $(this).index()
-        console.log(x, y, "ttt")
-        /*for (let i = 0; i <= casepossible.length; i++) {
-            if (casepossible[i][0] === casecliquee) {
-                if (tour % 2 === 1) {
-                    return joueur1.deplacejoueur(casepossible[i]);
-                } else {
-                    return joueur2.deplacejoueur(casepossible[i]);
-                }
-
+        for (let i = 0; i <= cellpossible.length; i++) {
+            if ((cellpossible[i][0]).id === $(this).attr('id')) {
+                console.log(this, i, cellpossible[i])
+                return tabplayers[activeplayer].movePlayer(cellpossible[i])
             }
-        }*/
+        }
     })
+}
+
+function makeId(x, y) {
+    return "#" + (x * nbCols + y).toString()
+}
+
+function gameLaunch() {
+    let combatMode = false
+    if (combatMode === false) {
+        cellToClick(tabplayers[activeplayer])
+        combatMode = true
+    }
 }
 
 function resizeCellsOnBoard() {

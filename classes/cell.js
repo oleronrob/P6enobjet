@@ -25,4 +25,13 @@ class cellOfBoard{
         this.freeForWeapon = false
         //this.addClass('wall')
     }*/
+    removePlayer(player){
+        this.player=0
+        this.isPlayer=false
+    }
+    addPlayer(player){
+        this.player=player
+        this.isPlayer=true
+    }
+
 }

@@ -5,7 +5,6 @@ class myBoard {
         this.width = ""
         this.height = ""
         this.tab = []
-
     }
 
     drawCells() {

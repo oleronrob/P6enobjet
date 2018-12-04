@@ -33,7 +33,7 @@ let tabplayers = [
 let tabInfoplayers = [
     new InfoPlayer(tabplayers[0]),
     new InfoPlayer(tabplayers[1])]
-
+let activeplayer =0
 $(document).ready(function () {
 
             myGame.gamePage.displayGame()
@@ -43,7 +43,8 @@ $(document).ready(function () {
             Board.drawWalls()
             Board.drawWeapons()
             Board.drawPlayers()
-            cellToClick(tabplayers[0])
+            gameLaunch()
+            //cellToClick(tabplayers[0])
             resizeCellsOnBoard()
 
         })

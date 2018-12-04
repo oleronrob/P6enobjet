@@ -4,7 +4,7 @@ class InfoPlayer {
     }
 
     init() {
-        let $player = $('<h1 id=' + this.player.title + '>' + this.player.name + '</h1>')
+        let $player = $('<h1>' + this.player.name + '</h1>')
         let $pictureplayer = $('<img src=' + this.player.picture + '>')
         let id = "weaponOf" + this.player.title
         let $pictureweapon = $('<div><h2>Weapon</h2><img id=' + id + ' src=' + this.player.weapon.picture + '></div>')
