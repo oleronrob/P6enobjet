@@ -51,15 +51,24 @@ class Player {
         for (let i = 1; i <= config[2]; i++) {
             let x = this.row
             let y = this.col
-            tabboard[x + config[1][0]][y + config[1][1]].player = tabplayers[activeplayer]
-            tabboard[x + config[1][0]][y + config[1][1]].isPlayer = true
+            let nextcell = tabboard[x + config[1][0]][y + config[1][1]]
+            nextcell.player = tabplayers[activeplayer]
+            nextcell.isPlayer = true
             this.id.animate({
                 opacity: "0"
             }, 800, affiche.bind(tabboard[x][y].player))
             tabboard[x][y].player = 0
             tabboard[x][y].isPlayer = false
+            console.log(tabboard[x][y].weapon)
+            if (!(nextcell.weapon === 0)) {
+                [this.weapon, nextcell.weapon] = [nextcell.weapon, this.weapon]
+                $("#" + this.weapon.name).remove()
+                let cellwp = makeId(x + config[1][0], y + config[1][1])
+                tabweapon[nextcell.weapon.number].draw(cellwp)
+            }
             this.row = this.row + config[1][0]
             this.col = this.col + config[1][1]
         }
+        togglePlayer()
     }
 }

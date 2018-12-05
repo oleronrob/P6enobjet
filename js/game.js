@@ -20,11 +20,11 @@ let myGame = new Game()
 // ----------------create weapons----------------
 
 let tabweapon = [
-    new Weapon("weapon0", 10, "./pictures/weapon0.png"),
-    new Weapon("weapon1", 15, "./pictures/weapon1.png"),
-    new Weapon("weapon2", 20, "./pictures/weapon2.png"),
-    new Weapon("weapon3", 25, "./pictures/weapon3.png"),
-    new Weapon("weapon4", 30, "./pictures/weapon4.png")
+    new Weapon("weapon0", 0, 10, "./pictures/weapon0.png"),
+    new Weapon("weapon1", 1, 15, "./pictures/weapon1.png"),
+    new Weapon("weapon2", 2, 20, "./pictures/weapon2.png"),
+    new Weapon("weapon3", 3, 25, "./pictures/weapon3.png"),
+    new Weapon("weapon4", 4, 30, "./pictures/weapon4.png")
 ]
 let tabplayers = [
     new Player("Player 1", "player1", "", "", "./pictures/player1.png", tabweapon[0], "move"),
@@ -33,18 +33,18 @@ let tabplayers = [
 let tabInfoplayers = [
     new InfoPlayer(tabplayers[0]),
     new InfoPlayer(tabplayers[1])]
-let activeplayer =0
+let activeplayer = 0
 $(document).ready(function () {
 
-            myGame.gamePage.displayGame()
-            tabInfoplayers[0].init()
-            tabInfoplayers[1].init()
-            Board.drawCells()
-            Board.drawWalls()
-            Board.drawWeapons()
-            Board.drawPlayers()
-            gameLaunch()
-            //cellToClick(tabplayers[0])
-            resizeCellsOnBoard()
+    myGame.gamePage.displayGame()
+    tabInfoplayers[0].init()
+    tabInfoplayers[1].init()
+    Board.drawCells()
+    Board.drawWalls()
+    Board.drawWeapons()
+    Board.drawPlayers()
+    gameLaunch()
+    //cellToClick(tabplayers[0])
+    resizeCellsOnBoard()
 
-        })
+})

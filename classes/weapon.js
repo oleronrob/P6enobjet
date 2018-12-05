@@ -1,6 +1,7 @@
 class Weapon {
-    constructor(name, strength, picture) {
+    constructor(name,num, strength, picture) {
         this.name = name
+        this.number = num
         this.strength = strength
         this.picture = picture
     }

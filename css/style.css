@@ -186,6 +186,7 @@ body {
 
 .player2,
 .player1 {
+    position :absolute;
     width: inherit;
     height: inherit;
     background-size: cover;

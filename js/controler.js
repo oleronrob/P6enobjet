@@ -59,7 +59,7 @@ function clickOnCell(posinit, cellpossible) {
         let y = $(this).index()
         for (let i = 0; i <= cellpossible.length; i++) {
             if ((cellpossible[i][0]).id === $(this).attr('id')) {
-                console.log(this, i, cellpossible[i])
+                //console.log(this, i, cellpossible[i])
                 return tabplayers[activeplayer].movePlayer(cellpossible[i])
             }
         }
@@ -73,9 +73,20 @@ function makeId(x, y) {
 function gameLaunch() {
     let combatMode = false
     if (combatMode === false) {
+
         cellToClick(tabplayers[activeplayer])
-        combatMode = true
+
+        //combatMode = true
     }
+}
+
+function togglePlayer() {
+    if (activeplayer === 0) {
+        activeplayer = 1
+    } else {
+        activeplayer = 0
+    }
+    gameLaunch()
 }
 
 function resizeCellsOnBoard() {
