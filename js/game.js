@@ -6,7 +6,7 @@ let tabboard = []
 let nbWalls = 10
 let maxMove = 3
 let moveChoice = [[0, 1], [0, -1], [1, 0], [-1, 0]]
-
+let combatMode = false
 
 // class game
 class Game {

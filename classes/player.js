@@ -7,6 +7,7 @@ class Player {
         this.col = col
         this.picture = picture
         this.weapon = weapon
+        this.life = 100
         this.action = move
     }
 
@@ -65,10 +66,15 @@ class Player {
                 $("#" + this.weapon.name).remove()
                 let cellwp = makeId(x + config[1][0], y + config[1][1])
                 tabweapon[nextcell.weapon.number].draw(cellwp)
+                $("#" + "weaponOf"+this.title).attr("src", tabweapon[this.weapon.number].picture)
             }
             this.row = this.row + config[1][0]
             this.col = this.col + config[1][1]
         }
-        togglePlayer()
+                let test =ifModeCombat.bind(this)
+        if (!test()) {
+            togglePlayer()
+        } else {runCombatMode()}
+
     }
 }

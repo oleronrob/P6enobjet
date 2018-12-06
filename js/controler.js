@@ -71,7 +71,25 @@ function makeId(x, y) {
 }
 
 function gameLaunch() {
-    let combatMode = false
+    if (activeplayer === 0) {
+        $("#img" + tabplayers[activeplayer].title).css({
+            border: "3px solid aqua",
+            'box-shadow': '4px 4px 3px blue'
+        })
+        $("#img" + tabplayers[1].title).css({
+            border: "none",
+            'box-shadow': 'none'
+        })
+    } else {
+        $("#img" + tabplayers[activeplayer].title).css({
+            border: "3px solid aqua",
+            'box-shadow': '4px 4px 3px blue'
+        })
+        $("#img" + tabplayers[0].title).css({
+            border: "none",
+            'box-shadow': 'none'
+        })
+    }
     if (combatMode === false) {
 
         cellToClick(tabplayers[activeplayer])
@@ -87,6 +105,44 @@ function togglePlayer() {
         activeplayer = 0
     }
     gameLaunch()
+}
+
+function ifModeCombat() {
+    for (let i = 0; i <= moveChoice.length - 1; i++) {
+        let x = this.row + moveChoice[i][0]
+        let y = this.col + moveChoice[i][1]
+        console.log(tabboard[x][y])
+        if (tabboard[x][y].isPlayer) {
+            return true
+        }
+    }
+}
+
+function runCombatMode() {
+    console.log("mode combat")
+    $(".action").css("opacity", 1)
+    /*for (i=0; i<=5;i++){
+
+    }
+    $('#fight'+ tabplayers[activeplayer].title).on("click", function(event){
+        console.log (this)
+    })
+    $('#defend'+ tabplayers[activeplayer].title).on("click", function(event){
+        console.log (this)
+    })*/
+
+    $('#info' + tabplayers[activeplayer].title + ' button').on("click", function (event) {
+        $('#info' + tabplayers[activeplayer].title + ' button').off("click")
+        console.log(this.className)
+        tabplayers[activeplayer].action = this.className
+        if (this.className === "fight") {
+
+
+        } else {
+            defend
+        }
+    })
+
 }
 
 function resizeCellsOnBoard() {

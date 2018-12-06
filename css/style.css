@@ -58,7 +58,7 @@ body {
 #lifeplayer1,
 #lifeplayer2 {
     /*border-radius: 0px 8px 8px 0px;*/
-    width: 80px;
+    width: 100px;
     height: 25px;
     background-color: green;
 }
@@ -109,7 +109,12 @@ body {
     min-height: 400px;
     height: auto;
 }
+#imgplayer1 {
+    /*border: 3px solid aqua;
+    box-shadow: 4px 4px 3px blue;*/
 
+
+}
 #instruction {
     color: white;
 }
@@ -135,6 +140,7 @@ body {
 
 .action {
     margin: 10px;
+    opacity: 0;
 }
 
 .defend,
